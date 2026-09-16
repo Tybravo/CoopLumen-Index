@@ -43,7 +43,7 @@ It answers three questions:
 
 **Not in scope:** React components, `page.tsx` files, `*.module.css` files, copywriting, imagery. This is a specification, not an implementation.
 
-**Blockchain-native requirement:** the landing page must make a visitor *feel* that they are on the Stellar network — live ledger activity, wallet connection, transaction lifecycles, asset codes, trustlines, explorer deep-links and network state are first-class content, not decoration.
+**Blockchain-native requirement:** the landing page must make a visitor _feel_ that they are on the Stellar network — live ledger activity, wallet connection, transaction lifecycles, asset codes, trustlines, explorer deep-links and network state are first-class content, not decoration.
 
 ---
 
@@ -51,14 +51,14 @@ It answers three questions:
 
 Every section entry uses the same fields:
 
-| Field | Meaning |
-| --- | --- |
-| **Type** | `Global Section` (renders on every route) or `Landing Section` (renders on the landing route only) |
-| **Anchor** | The proposed in-page anchor id for scroll-linked navigation |
-| **Description** | What the section says and why it exists |
-| **Content blocks** | The blocks the section is composed of, top to bottom |
+| Field                         | Meaning                                                                                             |
+| ----------------------------- | --------------------------------------------------------------------------------------------------- |
+| **Type**                      | `Global Section` (renders on every route) or `Landing Section` (renders on the landing route only)  |
+| **Anchor**                    | The proposed in-page anchor id for scroll-linked navigation                                         |
+| **Description**               | What the section says and why it exists                                                             |
+| **Content blocks**            | The blocks the section is composed of, top to bottom                                                |
 | **CTAs & navigation targets** | Every button or link, and where it navigates (internal route, in-page anchor, or external platform) |
-| **Colour treatment** | Base tokens plus the gradient token from [4.3](#43-gradient-tokens) |
+| **Colour treatment**          | Base tokens plus the gradient token from [4.3](#43-gradient-tokens)                                 |
 
 Page entries use: **Page / Route / Description / Rendered sections / Primary CTAs**.
 
@@ -76,16 +76,16 @@ Grounding facts the sections are built on.
 
 **Stack**
 
-| Layer | Technology | Version |
-| --- | --- | --- |
-| Frontend | Next.js App Router, React, TypeScript (strict) | `next ^15.5.25`, `react ^18.3.1`, `typescript ^5.5.3` |
-| Styling | **CSS Modules** + design tokens in `globals.css` | — |
-| Data fetching | SWR | `^2.2.5` |
-| Wallet | `@stellar/freighter-api` | `^2.0.0` |
-| Forms | `react-hook-form` + `zod` | `^7.86.0`, `^4.5.4` |
-| Backend | Node.js 20, Express 4, TypeScript | port `4000` |
-| Blockchain | Stellar SDK / Horizon REST | `@stellar/stellar-sdk` 12.3 |
-| Database | PostgreSQL 16 | off-chain metadata |
+| Layer         | Technology                                       | Version                                               |
+| ------------- | ------------------------------------------------ | ----------------------------------------------------- |
+| Frontend      | Next.js App Router, React, TypeScript (strict)   | `next ^15.5.25`, `react ^18.3.1`, `typescript ^5.5.3` |
+| Styling       | **CSS Modules** + design tokens in `globals.css` | —                                                     |
+| Data fetching | SWR                                              | `^2.2.5`                                              |
+| Wallet        | `@stellar/freighter-api`                         | `^2.0.0`                                              |
+| Forms         | `react-hook-form` + `zod`                        | `^7.86.0`, `^4.5.4`                                   |
+| Backend       | Node.js 20, Express 4, TypeScript                | port `4000`                                           |
+| Blockchain    | Stellar SDK / Horizon REST                       | `@stellar/stellar-sdk` 12.3                           |
+| Database      | PostgreSQL 16                                    | off-chain metadata                                    |
 
 **Existing routes today**
 
@@ -122,39 +122,39 @@ These raw values are declared once per theme and are **never consumed directly**
 
 **Light theme**
 
-| Raw token | Hex | Role in the landing page |
-| --- | --- | --- |
-| `--palette-light-primary` | `#5B4BD6` | Brand violet — headlines, primary CTAs, start of every "lumen" gradient |
-| `--palette-light-secondary` | `#0A7D63` | Ledger teal — end of every gradient, success, treasury accents |
-| `--palette-light-bg` | `#EEEEF5` | Page background |
-| `--palette-light-surface` | `#F8F8FC` | Cards, panels, sticky header |
-| `--palette-light-surface-raised` | `#FFFFFF` | Raised cards, modals, code blocks |
-| `--palette-light-border` | `#D8D8E6` | 1px hairlines and dividers |
-| `--palette-light-text` | `#1A1A2E` | Body and heading text |
-| `--palette-light-text-muted` | `#55556E` | Captions, helper text, section eyebrows |
-| `--palette-light-text-inverse` | `#FFFFFF` | Text on dark or gradient fills |
-| `--palette-light-error` | `#C0392B` | Defaulted loans, failed transactions |
-| `--palette-light-success` | `#0A7D63` | Repaid loans, active network, verified trustline |
-| `--palette-light-info` | `#175FBF` | Info banners, governance accents, focus ring |
-| `--palette-light-warning` | `#8A6100` | Pending signatures, testnet notices |
+| Raw token                        | Hex       | Role in the landing page                                                |
+| -------------------------------- | --------- | ----------------------------------------------------------------------- |
+| `--palette-light-primary`        | `#5B4BD6` | Brand violet — headlines, primary CTAs, start of every "lumen" gradient |
+| `--palette-light-secondary`      | `#0A7D63` | Ledger teal — end of every gradient, success, treasury accents          |
+| `--palette-light-bg`             | `#EEEEF5` | Page background                                                         |
+| `--palette-light-surface`        | `#F8F8FC` | Cards, panels, sticky header                                            |
+| `--palette-light-surface-raised` | `#FFFFFF` | Raised cards, modals, code blocks                                       |
+| `--palette-light-border`         | `#D8D8E6` | 1px hairlines and dividers                                              |
+| `--palette-light-text`           | `#1A1A2E` | Body and heading text                                                   |
+| `--palette-light-text-muted`     | `#55556E` | Captions, helper text, section eyebrows                                 |
+| `--palette-light-text-inverse`   | `#FFFFFF` | Text on dark or gradient fills                                          |
+| `--palette-light-error`          | `#C0392B` | Defaulted loans, failed transactions                                    |
+| `--palette-light-success`        | `#0A7D63` | Repaid loans, active network, verified trustline                        |
+| `--palette-light-info`           | `#175FBF` | Info banners, governance accents, focus ring                            |
+| `--palette-light-warning`        | `#8A6100` | Pending signatures, testnet notices                                     |
 
 **Dark theme**
 
-| Raw token | Hex | Role in the landing page |
-| --- | --- | --- |
-| `--palette-dark-primary` | `#6C5CE7` | Brand violet, brightened for dark surfaces |
-| `--palette-dark-secondary` | `#00B894` | Ledger teal, neon — heavy gradient and accent work |
-| `--palette-dark-bg` | `#0F0F1A` | Page background — the "night ledger" canvas |
-| `--palette-dark-surface` | `#1A1A2E` | Cards and sections |
-| `--palette-dark-surface-raised` | `#23233D` | Raised cards, code blocks, sticky header |
-| `--palette-dark-border` | `#2D2D44` | Hairlines |
-| `--palette-dark-text` | `#E0E0F0` | Body and heading text |
-| `--palette-dark-text-muted` | `#8888AA` | Secondary text |
-| `--palette-dark-text-inverse` | `#0F0F1A` | Text on bright fills — see the warning in 4.5 |
-| `--palette-dark-error` | `#E17055` | Failures, defaults |
-| `--palette-dark-success` | `#00B894` | Success states |
-| `--palette-dark-info` | `#74B9FF` | Info, governance, focus ring |
-| `--palette-dark-warning` | `#FDCB6E` | Warnings, pending states |
+| Raw token                       | Hex       | Role in the landing page                           |
+| ------------------------------- | --------- | -------------------------------------------------- |
+| `--palette-dark-primary`        | `#6C5CE7` | Brand violet, brightened for dark surfaces         |
+| `--palette-dark-secondary`      | `#00B894` | Ledger teal, neon — heavy gradient and accent work |
+| `--palette-dark-bg`             | `#0F0F1A` | Page background — the "night ledger" canvas        |
+| `--palette-dark-surface`        | `#1A1A2E` | Cards and sections                                 |
+| `--palette-dark-surface-raised` | `#23233D` | Raised cards, code blocks, sticky header           |
+| `--palette-dark-border`         | `#2D2D44` | Hairlines                                          |
+| `--palette-dark-text`           | `#E0E0F0` | Body and heading text                              |
+| `--palette-dark-text-muted`     | `#8888AA` | Secondary text                                     |
+| `--palette-dark-text-inverse`   | `#0F0F1A` | Text on bright fills — see the warning in 4.5      |
+| `--palette-dark-error`          | `#E17055` | Failures, defaults                                 |
+| `--palette-dark-success`        | `#00B894` | Success states                                     |
+| `--palette-dark-info`           | `#74B9FF` | Info, governance, focus ring                       |
+| `--palette-dark-warning`        | `#FDCB6E` | Warnings, pending states                           |
 
 **The chromatic spine.** Violet → teal is the brand axis: `#5B4BD6 → #0A7D63` in light, `#6C5CE7 → #00B894` in dark. Every gradient in [4.3](#43-gradient-tokens) travels along that axis. It reads as "ledger / network / crypto" without importing an off-brand cliché such as bitcoin orange or ethereum blue.
 
@@ -162,21 +162,21 @@ These raw values are declared once per theme and are **never consumed directly**
 
 Components read these, never the raw palette. Any landing-page CSS must consume these names.
 
-| Token | Light resolves to | Dark resolves to |
-| --- | --- | --- |
-| `--color-primary` | `#5B4BD6` | `#6C5CE7` |
-| `--color-secondary` | `#0A7D63` | `#00B894` |
-| `--color-bg` | `#EEEEF5` | `#0F0F1A` |
-| `--color-surface` | `#F8F8FC` | `#1A1A2E` |
-| `--color-surface-raised` | `#FFFFFF` | `#23233D` |
-| `--color-border` | `#D8D8E6` | `#2D2D44` |
-| `--color-text` | `#1A1A2E` | `#E0E0F0` |
-| `--color-text-muted` | `#55556E` | `#8888AA` |
-| `--color-text-inverse` | `#FFFFFF` | `#0F0F1A` |
-| `--color-error` | `#C0392B` | `#E17055` |
-| `--color-success` | `#0A7D63` | `#00B894` |
-| `--color-info` | `#175FBF` | `#74B9FF` |
-| `--color-warning` | `#8A6100` | `#FDCB6E` |
+| Token                    | Light resolves to | Dark resolves to |
+| ------------------------ | ----------------- | ---------------- |
+| `--color-primary`        | `#5B4BD6`         | `#6C5CE7`        |
+| `--color-secondary`      | `#0A7D63`         | `#00B894`        |
+| `--color-bg`             | `#EEEEF5`         | `#0F0F1A`        |
+| `--color-surface`        | `#F8F8FC`         | `#1A1A2E`        |
+| `--color-surface-raised` | `#FFFFFF`         | `#23233D`        |
+| `--color-border`         | `#D8D8E6`         | `#2D2D44`        |
+| `--color-text`           | `#1A1A2E`         | `#E0E0F0`        |
+| `--color-text-muted`     | `#55556E`         | `#8888AA`        |
+| `--color-text-inverse`   | `#FFFFFF`         | `#0F0F1A`        |
+| `--color-error`          | `#C0392B`         | `#E17055`        |
+| `--color-success`        | `#0A7D63`         | `#00B894`        |
+| `--color-info`           | `#175FBF`         | `#74B9FF`        |
+| `--color-warning`        | `#8A6100`         | `#FDCB6E`        |
 
 Derived tokens already declared and available to gradients and states: `--color-primary-hover`, `--color-primary-active`, `--color-primary-subtle`, `--color-secondary-hover`, `--color-secondary-active`, `--color-secondary-subtle`, `--color-surface-hover`, `--color-border-strong`, `--color-text-on-primary`, `--color-error-subtle`, `--color-success-subtle`, `--color-info-subtle`, `--color-warning-subtle`, `--color-skeleton-base`, `--color-skeleton-highlight`, `--color-focus-ring`.
 
@@ -186,7 +186,7 @@ Also available for layout: `--space-0 … --space-24` (4px base), `--radius-none
 
 The codebase currently contains **no gradients** (only a `linear-gradient` shimmer inside `LoadingSkeleton.module.css`). The landing page introduces a new, self-contained `--gradient-*` family.
 
-Design rule: gradients are declared **once, theme-agnostically**, and built from the *semantic* tokens with `color-mix(in srgb, …)`. Because those tokens already flip with the theme, light and dark need **no duplicated gradient declarations**.
+Design rule: gradients are declared **once, theme-agnostically**, and built from the _semantic_ tokens with `color-mix(in srgb, …)`. Because those tokens already flip with the theme, light and dark need **no duplicated gradient declarations**.
 
 ```css
 :root,
@@ -243,12 +243,14 @@ Design rule: gradients are declared **once, theme-agnostically**, and built from
   );
 
   /* Aurora: ambient light leaking in from two corners over the page canvas. */
-  --gradient-aurora: radial-gradient(60% 80% at 12% 0%, var(--color-primary-subtle), transparent 60%),
+  --gradient-aurora:
+    radial-gradient(60% 80% at 12% 0%, var(--color-primary-subtle), transparent 60%),
     radial-gradient(50% 70% at 88% 10%, var(--color-secondary-subtle), transparent 65%),
     var(--color-bg);
 
   /* Mesh: three-point ambient field for the developer/ecosystem section. */
-  --gradient-mesh: radial-gradient(45% 60% at 20% 20%, var(--color-primary-subtle), transparent 70%),
+  --gradient-mesh:
+    radial-gradient(45% 60% at 20% 20%, var(--color-primary-subtle), transparent 70%),
     radial-gradient(40% 55% at 80% 30%, var(--color-info-subtle), transparent 70%),
     radial-gradient(50% 60% at 55% 95%, var(--color-secondary-subtle), transparent 72%),
     var(--color-surface);
@@ -292,20 +294,20 @@ Design rule: gradients are declared **once, theme-agnostically**, and built from
 
 ### 4.4 Gradient → Section Mapping
 
-| Gradient token | Sections that use it | Effect |
-| --- | --- | --- |
-| 🟣 `--gradient-hero` | 5 Hero, 7 Wallet Connect Hero Panel, 39 Final CTA Band | Full-bleed violet→teal wash, white/dark-inverse text on top |
-| 🟣 `--gradient-cta` / `--gradient-cta-hover` | 5 Hero primary CTA, 9 Three-Pillar CTAs, 34 Pricing, 37 Newsletter, 39 Final CTA Band, 40 Contact Us submit | Button and band fills; hover slides further toward teal |
-|  `--gradient-ledger` | 3 Network Status Bar, 6 Live Network Metrics Strip, 24 Live On-Chain Activity Feed | Translucent animated sweep behind live figures |
-| 🟢 `--gradient-treasury` | 17 Shared Multi-Signature Treasury, 18 Batch Disbursement & Airdrop, 35 Community & Support Hub | Teal→violet, "funds coming home" |
-| 🔵 `--gradient-governance` | 21 DAO Governance & Soroban Proposals, 31 Public Roadmap Timeline (Phase 3 marker) | Violet→info blue, deliberate and civic |
-| 🧊 `--gradient-aurora` | 10 Financial Exclusion Problem, 11 How CoopLumen Works, 13 Comparison Matrix, 30 Community Stories, 31 Roadmap, 38 Blog/Changelog | Ambient corner light over the page canvas |
-| 🧊 `--gradient-surface` | All default sections not listed above (12, 14–16, 19, 20, 22, 23, 25–29, 32, 33, 36) | Near-invisible raised→flat wash for depth without noise |
-|  `--gradient-token` | 15 Community Token Issuance, 16 Trustline Onboarding, 26 Asset & Trustline Explorer, 20 Reputation & Credit Signals | Soft violet/teal tint for asset-centric cards |
-| 🟩 `--gradient-trust` | 33 Security, Transparency & Open Source, 22 Identity/KYC/Oracles | Success→info tint for reassurance |
-| 🧊 `--gradient-mesh` | 11 How CoopLumen Works (developer variant), 14 Architecture Transparency, 33 (code side) | Three-point ambient field for technical content |
-| 〰️ `--gradient-seam` | Between every major section group (A→B→C→D→E→F→G) | 1px violet→teal hairline; the "blockchain seam" |
-| 🔤 `--gradient-text-hero` | 5 Hero headline, 6 Metrics Strip numbers, 32 Impact Metrics | Text-clipped gradient for headline emphasis |
+| Gradient token                               | Sections that use it                                                                                                              | Effect                                                      |
+| -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------- |
+| 🟣 `--gradient-hero`                         | 5 Hero, 7 Wallet Connect Hero Panel, 39 Final CTA Band                                                                            | Full-bleed violet→teal wash, white/dark-inverse text on top |
+| 🟣 `--gradient-cta` / `--gradient-cta-hover` | 5 Hero primary CTA, 9 Three-Pillar CTAs, 34 Pricing, 37 Newsletter, 39 Final CTA Band, 40 Contact Us submit                       | Button and band fills; hover slides further toward teal     |
+| `--gradient-ledger`                          | 3 Network Status Bar, 6 Live Network Metrics Strip, 24 Live On-Chain Activity Feed                                                | Translucent animated sweep behind live figures              |
+| 🟢 `--gradient-treasury`                     | 17 Shared Multi-Signature Treasury, 18 Batch Disbursement & Airdrop, 35 Community & Support Hub                                   | Teal→violet, "funds coming home"                            |
+| 🔵 `--gradient-governance`                   | 21 DAO Governance & Soroban Proposals, 31 Public Roadmap Timeline (Phase 3 marker)                                                | Violet→info blue, deliberate and civic                      |
+| 🧊 `--gradient-aurora`                       | 10 Financial Exclusion Problem, 11 How CoopLumen Works, 13 Comparison Matrix, 30 Community Stories, 31 Roadmap, 38 Blog/Changelog | Ambient corner light over the page canvas                   |
+| 🧊 `--gradient-surface`                      | All default sections not listed above (12, 14–16, 19, 20, 22, 23, 25–29, 32, 33, 36)                                              | Near-invisible raised→flat wash for depth without noise     |
+| `--gradient-token`                           | 15 Community Token Issuance, 16 Trustline Onboarding, 26 Asset & Trustline Explorer, 20 Reputation & Credit Signals               | Soft violet/teal tint for asset-centric cards               |
+| 🟩 `--gradient-trust`                        | 33 Security, Transparency & Open Source, 22 Identity/KYC/Oracles                                                                  | Success→info tint for reassurance                           |
+| 🧊 `--gradient-mesh`                         | 11 How CoopLumen Works (developer variant), 14 Architecture Transparency, 33 (code side)                                          | Three-point ambient field for technical content             |
+| 〰️ `--gradient-seam`                         | Between every major section group (A→B→C→D→E→F→G)                                                                                 | 1px violet→teal hairline; the "blockchain seam"             |
+| 🔤 `--gradient-text-hero`                    | 5 Hero headline, 6 Metrics Strip numbers, 32 Impact Metrics                                                                       | Text-clipped gradient for headline emphasis                 |
 
 **Rules of restraint**
 
@@ -315,16 +317,16 @@ Design rule: gradients are declared **once, theme-agnostically**, and built from
 
 ### 4.5 Contrast & Accessibility Rules
 
-| Foreground | Background | Ratio | Verdict |
-| --- | --- | --- | --- |
-| `#FFFFFF` | `#5B4BD6` (light primary) | ≈ 6.2:1 | ✅ AA for all text |
-| `#FFFFFF` | `#0A7D63` (light secondary) | ≈ 5.2:1 | ✅ AA for all text |
-| `#FFFFFF` | `#6C5CE7` (dark primary) | ≈ 4.7:1 | ✅ AA normal, ✅ AAA large |
-| `#FFFFFF` | `#00B894` (dark secondary) | ≈ 2.6:1 | ❌ **fails** — must not carry white text |
-| `#0F0F1A` | `#00B894` (dark secondary) | ≈ 8.0:1 | ✅ use `--color-text-inverse` instead |
-| `#E0E0F0` | `#0F0F1A` (dark bg) | ≈ 14.6:1 | ✅ AAA |
-| `#1A1A2E` | `#EEEEF5` (light bg) | ≈ 15.4:1 | ✅ AAA |
-| `#8888AA` | `#0F0F1A` (dark bg) | ≈ 6.6:1 | ✅ AA |
+| Foreground | Background                  | Ratio    | Verdict                                  |
+| ---------- | --------------------------- | -------- | ---------------------------------------- |
+| `#FFFFFF`  | `#5B4BD6` (light primary)   | ≈ 6.2:1  | ✅ AA for all text                       |
+| `#FFFFFF`  | `#0A7D63` (light secondary) | ≈ 5.2:1  | ✅ AA for all text                       |
+| `#FFFFFF`  | `#6C5CE7` (dark primary)    | ≈ 4.7:1  | ✅ AA normal, ✅ AAA large               |
+| `#FFFFFF`  | `#00B894` (dark secondary)  | ≈ 2.6:1  | ❌ **fails** — must not carry white text |
+| `#0F0F1A`  | `#00B894` (dark secondary)  | ≈ 8.0:1  | ✅ use `--color-text-inverse` instead    |
+| `#E0E0F0`  | `#0F0F1A` (dark bg)         | ≈ 14.6:1 | ✅ AAA                                   |
+| `#1A1A2E`  | `#EEEEF5` (light bg)        | ≈ 15.4:1 | ✅ AAA                                   |
+| `#8888AA`  | `#0F0F1A` (dark bg)         | ≈ 6.6:1  | ✅ AA                                    |
 
 **Binding rules**
 
@@ -352,16 +354,16 @@ These come from the existing codebase and tests; the landing page must not break
 
 **Primary header links** (`→` internal, `▲` external)
 
-| Label | Destination | Notes |
-| --- | --- | --- |
-| Product | `→ #three-pillar-value-proposition` | Scrolls to the landing pillars; sub-menu items jump to sections 15–22 |
-| Communities | `→ /communities` | Discover Communities page (P1) |
-| Developers | `→ /developers` | Developer & API page (P4) |
-| Roadmap | `→ #public-roadmap-timeline` | Landing section 31 |
-| Pricing | `→ #pricing-community-plans` | Landing section 34 (and reserved `/pricing`) |
-| Connect Freighter | `→` `useWallet().connect()` | Opens the Freighter extension; a failure surfaces `NetworkWarning` |
-| GitHub | `▲ https://github.com/Tybravo/CoopLumen-Index` | Repository, from the workspace remote |
-| Docs | `▲ https://developers.stellar.org` | Stellar developer documentation |
+| Label             | Destination                                    | Notes                                                                 |
+| ----------------- | ---------------------------------------------- | --------------------------------------------------------------------- |
+| Product           | `→ #three-pillar-value-proposition`            | Scrolls to the landing pillars; sub-menu items jump to sections 15–22 |
+| Communities       | `→ /communities`                               | Discover Communities page (P1)                                        |
+| Developers        | `→ /developers`                                | Developer & API page (P4)                                             |
+| Roadmap           | `→ #public-roadmap-timeline`                   | Landing section 31                                                    |
+| Pricing           | `→ #pricing-community-plans`                   | Landing section 34 (and reserved `/pricing`)                          |
+| Connect Freighter | `→` `useWallet().connect()`                    | Opens the Freighter extension; a failure surfaces `NetworkWarning`    |
+| GitHub            | `▲ https://github.com/Tybravo/CoopLumen-Index` | Repository, from the workspace remote                                 |
+| Docs              | `▲ https://developers.stellar.org`             | Stellar developer documentation                                       |
 
 **In-page flow (the order a visitor is walked through)**
 
@@ -396,16 +398,16 @@ These come from the existing codebase and tests; the landing page must not break
 
 **External blockchain platforms referenced by the landing page**
 
-| Platform | Purpose | Appears in sections |
-| --- | --- | --- |
-| Stellar Expert (`stellar.expert`) | Ledger, account and asset explorer | 3, 23, 24, 26, 35 |
-| Horizon (`horizon-testnet.stellar.org`) | The API the app actually talks to | 3, 12, 14, 23, 28 |
-| `stellar.org` / `developers.stellar.org` | Protocol docs, Soroban | 8, 12, 14, 21, 36 |
-| Freighter (`freighter.app`) | Wallet extension | 2, 5, 7, 12, 35 |
-| `@stellar/stellar-sdk` (npm) | SDK, pinned at 12.3 | 8, 14, 37 |
-| Stellar Developers Discord | Community help | 35, 40 |
-| GitHub repo + Discussions | Source, issues, discussion | 2, 4, 31, 36, 38, 40 |
-| Open Collective (`cooplumen`) | Funding | 4, 36 |
+| Platform                                 | Purpose                            | Appears in sections  |
+| ---------------------------------------- | ---------------------------------- | -------------------- |
+| Stellar Expert (`stellar.expert`)        | Ledger, account and asset explorer | 3, 23, 24, 26, 35    |
+| Horizon (`horizon-testnet.stellar.org`)  | The API the app actually talks to  | 3, 12, 14, 23, 28    |
+| `stellar.org` / `developers.stellar.org` | Protocol docs, Soroban             | 8, 12, 14, 21, 36    |
+| Freighter (`freighter.app`)              | Wallet extension                   | 2, 5, 7, 12, 35      |
+| `@stellar/stellar-sdk` (npm)             | SDK, pinned at 12.3                | 8, 14, 37            |
+| Stellar Developers Discord               | Community help                     | 35, 40               |
+| GitHub repo + Discussions                | Source, issues, discussion         | 2, 4, 31, 36, 38, 40 |
+| Open Collective (`cooplumen`)            | Funding                            | 4, 36                |
 
 ---
 
@@ -622,7 +624,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Burn path note (`build-burn`) for supply reduction.
   5. An `EmptyState`-style note for communities with no token yet.
 - **CTAs & navigation targets:** "Issue a token" `→ /` (dashboard); "API: build-issue" `→ /developers#tokens`; "View an asset" `▲ stellar.expert`; "Next: trustlines" `→ #trustline-onboarding`.
-- **Colour treatment:**  `--gradient-token` card on `--color-surface`; asset code in monospace with `--color-primary`; a `--gradient-seam` divider under the on-chain trace.
+- **Colour treatment:** `--gradient-token` card on `--color-surface`; asset code in monospace with `--color-primary`; a `--gradient-seam` divider under the on-chain trace.
 
 #### 16. Trustline Onboarding
 
@@ -636,7 +638,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. A `Tooltip` on "trustline" giving the one-sentence definition.
   5. Failure states as `Badge` variants: unsigned, rejected, already exists.
 - **CTAs & navigation targets:** "Review my trustlines" `→ /` (`BalancePanel`); "API: build-trustline" `→ /developers#trustlines`; "Look up an account" `▲ horizon-testnet.stellar.org`; "Next: the treasury" `→ #shared-multisig-treasury`.
-- **Colour treatment:**  `--gradient-token` on `--color-surface`; the "after" state uses `--color-success-subtle`; the "before" state uses `--color-warning-subtle` rather than red, since nothing has failed.
+- **Colour treatment:** `--gradient-token` on `--color-surface`; the "after" state uses `--color-success-subtle`; the "before" state uses `--color-warning-subtle` rather than red, since nothing has failed.
 
 #### 17. Shared Multi-Signature Treasury
 
@@ -690,7 +692,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Status `Badge`: "On-chain scoring — Phase 3".
   5. A "your own score" panel mirroring `MyReputationPanel` for a connected wallet.
 - **CTAs & navigation targets:** "View the leaderboard" `→ /`; "API: reputation" `→ /developers#reputation`; "Look up an address" `→ #asset-trustline-explorer`; "Governance weighting" `→ #dao-governance-soroban`.
-- **Colour treatment:**  `--gradient-token` behind the leaderboard card; score values use `--color-success` for strong records and `--color-warning` for thin ones; rank numbers in `--color-text-muted`.
+- **Colour treatment:** `--gradient-token` behind the leaderboard card; score values use `--color-success` for strong records and `--color-warning` for thin ones; rank numbers in `--color-text-muted`.
 
 #### 21. DAO Governance & Soroban Proposals
 
@@ -704,7 +706,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Status `Badge`: "Phase 3 — Soroban contract planned".
   5. A note on the open question: weighted voting vs simple majority (`PRD.md` §11).
 - **CTAs & navigation targets:** "Read the governance plan" `→ /about`; "Soroban docs" `▲` Soroban docs; "Roadmap Phase 3" `→ #public-roadmap-timeline`; "Identity gate" `→ #identity-kyc-oracles`.
-- **Colour treatment:**  `--gradient-governance` band with `--color-text-inverse` on the info end; tally bars use `--color-success-subtle` (yes) and `--color-error-subtle` (no).
+- **Colour treatment:** `--gradient-governance` band with `--color-text-inverse` on the info end; tally bars use `--color-success-subtle` (yes) and `--color-error-subtle` (no).
 
 #### 22. Identity, KYC & Price Oracles
 
@@ -725,7 +727,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
 
 - **Type:** Landing Section
 - **Anchor:** `#transaction-lifecycle-visualizer`
-- **Description:** The section that makes the blockchain *felt*. A visitor presses one button and watches a real transaction travel: the backend builds an unsigned XDR, Freighter signs it client-side, the signed envelope is submitted to Horizon, and the ledger closes. Each stage lights up in turn with a timestamp and a hash — the clearest possible answer to "so what actually happens?".
+- **Description:** The section that makes the blockchain _felt_. A visitor presses one button and watches a real transaction travel: the backend builds an unsigned XDR, Freighter signs it client-side, the signed envelope is submitted to Horizon, and the ledger closes. Each stage lights up in turn with a timestamp and a hash — the clearest possible answer to "so what actually happens?".
 - **Content blocks:**
   1. Five-stage rail: **Build** (unsigned XDR) → **Sign** (Freighter, in-browser) → **Submit** → **Ledger close** (~3–5s) → **Confirmed**.
   2. Live elapsed timer per stage and a total.
@@ -734,7 +736,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   5. Failure-path toggle showing a rejected signature as an `Alert` with `role="alert"`.
   6. A "run it yourself" CTA into the real dashboard.
 - **CTAs & navigation targets:** "Run it on testnet" `→ /`; "API: transactions" `→ /developers#transactions`; "See it on the explorer" `▲ stellar.expert`; "Why sign client-side?" `→ #security-transparency-open-source`.
-- **Colour treatment:**  `--gradient-ledger` sweeping along the stage rail; each completed stage lights with `--gradient-cta`; pending stages stay `--color-border`; the animation becomes a static stepped diagram under reduced motion.
+- **Colour treatment:** `--gradient-ledger` sweeping along the stage rail; each completed stage lights with `--gradient-cta`; pending stages stay `--color-border`; the animation becomes a static stepped diagram under reduced motion.
 
 #### 24. Live On-Chain Activity Feed
 
@@ -761,7 +763,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   3. A `Pagination` strip showing the list scales past one page.
   4. Join affordances mirroring the real `Join Community` / `Joined` states.
 - **CTAs & navigation targets:** "Browse all communities" `→ /communities`; a card's overlay `→ /communities/{id}`; "Create your own" `→ /`; "Search API" `→ /developers#communities`.
-- **Colour treatment:**  `--gradient-surface`; asset codes on `--gradient-token` chips; the "Joined" state carries `--color-success-subtle`, "Join" keeps the outline style.
+- **Colour treatment:** `--gradient-surface`; asset codes on `--gradient-token` chips; the "Joined" state carries `--color-success-subtle`, "Join" keeps the outline style.
 
 #### 26. Asset & Trustline Explorer
 
@@ -775,7 +777,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Error state for an unfunded or malformed account.
   5. "Copy address" and "View on explorer" actions.
 - **CTAs & navigation targets:** "Balances API" `→ /developers#balances`; "Trustlines API" `→ /developers#trustlines`; "Open on explorer" `▲ stellar.expert`; "Horizon endpoint" `▲ horizon-testnet.stellar.org`.
-- **Colour treatment:**  `--gradient-token` behind the input card; the results table uses `--color-surface-raised` with `--color-border` rules; the native XLM row gets a `--color-info-subtle` tint.
+- **Colour treatment:** `--gradient-token` behind the input card; the results table uses `--color-surface-raised` with `--color-border` rules; the native XLM row gets a `--color-info-subtle` tint.
 
 #### 27. Fee & Remittance Savings Calculator
 
@@ -803,7 +805,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Current network pill and an explorer link.
   5. A disclosure line naming the price source.
 - **CTAs & navigation targets:** "Prices API" `→ /developers#prices`; "Network status page" `→ /status`; "Horizon stats" `▲ horizon-testnet.stellar.org`; "Back to the metrics" `→ #live-network-metrics-strip`.
-- **Colour treatment:**  `--gradient-surface` with a `--gradient-ledger` sparkline fill; deltas use `--color-success-subtle` / `--color-error-subtle`; neutral values stay `--color-text-muted`.
+- **Colour treatment:** `--gradient-surface` with a `--gradient-ledger` sparkline fill; deltas use `--color-success-subtle` / `--color-error-subtle`; neutral values stay `--color-text-muted`.
 
 ### Group F — Proof, Trust & Roadmap
 
@@ -818,7 +820,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   3. Each card states that persona's key need in their own words.
   4. A "which one are you?" selector that jumps to the most relevant section.
 - **CTAs & navigation targets:** Treasurer `→ #community-token-issuance`; Member `→ #p2p-micro-lending-pools`; NGO `→ #batch-disbursement-airdrop`; Developer `→ /developers`; Governance `→ #dao-governance-soroban`; Auditor `→ #live-onchain-activity-feed`.
-- **Colour treatment:**  `--gradient-surface`; six cards in a two-column (`md`) then three-column (`lg`) grid using the token grid utilities; each persona icon tinted from a different semantic token.
+- **Colour treatment:** `--gradient-surface`; six cards in a two-column (`md`) then three-column (`lg`) grid using the token grid utilities; each persona icon tinted from a different semantic token.
 
 #### 30. Community Stories & Case Studies
 
@@ -831,7 +833,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   3. A "verified on-chain" link `▲` per story so a sceptic can check.
   4. A disclosure line: illustrative scenario until pilot data is available.
 - **CTAs & navigation targets:** "Read the full case study" `→ /blog`; "Register your community" `→ /`; "Talk to the team" `→ /contact`; explorer links `▲`.
-- **Colour treatment:**  `--gradient-aurora`; quotes in `--color-text` with attribution in `--color-text-muted`; the outcome metric uses `--gradient-text-hero`.
+- **Colour treatment:** `--gradient-aurora`; quotes in `--color-text` with attribution in `--color-text-muted`; the outcome metric uses `--gradient-text-hero`.
 
 #### 31. Public Roadmap Timeline
 
@@ -845,7 +847,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Phase 4 — Identity, KYC & Oracles: SEP-12, decentralized identity, price oracle, remittance corridors.
   5. A `Badge` state and target quarter per item.
 - **CTAs & navigation targets:** "Follow the roadmap on GitHub" `▲` repo issues/projects; "Read the PRD" `→ /about`; "Contribute to an open item" `→ #contribution-bounty-spotlight`; "Governance detail" `→ #dao-governance-soroban`.
-- **Colour treatment:**  `--gradient-aurora` with a `--gradient-seam` spine down the timeline; the current Phase 1 marker uses `--gradient-cta`, Phase 3 uses `--gradient-governance`.
+- **Colour treatment:** `--gradient-aurora` with a `--gradient-seam` spine down the timeline; the current Phase 1 marker uses `--gradient-cta`, Phase 3 uses `--gradient-governance`.
 
 #### 32. Impact Metrics & Success Targets
 
@@ -858,7 +860,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   3. A `ProgressBar` per metric.
   4. A "last updated" caption plus a link to how each metric is measured.
 - **CTAs & navigation targets:** "Live figures" `→ #live-network-metrics-strip`; "How we measure" `→ /about`; "Contribute" `→ #contribution-bounty-spotlight`; "Coverage report" `▲` CI.
-- **Colour treatment:**  `--gradient-surface`; `ProgressBar` fills from `--gradient-cta`; achieved targets get `--color-success` badges and in-progress ones `--color-info`.
+- **Colour treatment:** `--gradient-surface`; `ProgressBar` fills from `--gradient-cta`; achieved targets get `--color-success` badges and in-progress ones `--color-info`.
 
 #### 33. Security, Transparency & Open Source
 
@@ -913,7 +915,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Contributor count and resolved-issue counter (shared with section 32).
   5. A `CONTRIBUTORS.md` strip acknowledging existing contributors.
 - **CTAs & navigation targets:** "Browse good first issues" `▲` repo issues; "Read `CONTRIBUTING.md`" `▲` repo; "Open Collective" `▲`; "GitHub Sponsors" `▲` (`FUNDING.yml`); "Contributor list" `→ /about#contributors`.
-- **Colour treatment:**  `--gradient-mesh` on `--color-surface`; issue cards use `--gradient-token` accents; bounty badges use `--color-warning-subtle`.
+- **Colour treatment:** `--gradient-mesh` on `--color-surface`; issue cards use `--gradient-token` accents; bounty badges use `--color-warning-subtle`.
 
 #### 37. Newsletter & Testnet Waitlist Capture
 
@@ -927,7 +929,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. Success and error states via `Alert`.
   5. Privacy line: only email or public key, never a secret key.
 - **CTAs & navigation targets:** "Join the waitlist" `→` submit; "Read the changelog instead" `→ #blog-changelog-preview`; "Get involved now" `→ #contribution-bounty-spotlight`; privacy policy `→ /privacy`.
-- **Colour treatment:**  `--gradient-cta` accent bar along the card's top edge; inputs on `--color-surface-raised`; success state in `--color-success-subtle`.
+- **Colour treatment:** `--gradient-cta` accent bar along the card's top edge; inputs on `--color-surface-raised`; success state in `--color-success-subtle`.
 
 #### 38. Blog, Changelog & Release Notes Preview
 
@@ -941,7 +943,7 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
   4. A subscribe hook linking back to section 37.
   5. An `RSS`/feed affordance marker.
 - **CTAs & navigation targets:** "Read the changelog" `→ /changelog`; "All posts" `→ /blog`; "View `CHANGELOG.md`" `▲` repo; "Subscribe" `→ #newsletter-testnet-waitlist`.
-- **Colour treatment:**  `--gradient-aurora` behind the entry list; category badges reuse the `Badge` variants; entry titles in `--color-text` with `--color-text-muted` dates.
+- **Colour treatment:** `--gradient-aurora` behind the entry list; category badges reuse the `Badge` variants; entry titles in `--color-text` with `--color-text-muted` dates.
 
 #### 39. Final CTA Band
 
@@ -975,48 +977,48 @@ Groups: **A** Global Chrome (1–4) · **B** Hero & First Impression (5–9) · 
 
 ### Quick Reference — the 40 sections
 
-| # | Section | Anchors to / links to route | Gradient |
-| --- | --- | --- | --- |
-| 1 | Header Navigation Bar | `/`, `/communities`, `/developers`, `#pricing-community-plans` | `--gradient-seam` |
-| 2 | Mobile Navigation Drawer | header destinations, `#wallet-connect-hero-panel` | overlay + surface-raised |
-| 3 | Network Status Bar | `▲` Stellar Expert, `#fee-remittance-calculator` | `--gradient-ledger` |
-| 4 | Site Footer | every anchor and reserved route | `--gradient-seam` |
-| 5 | Hero Section | `/`, `/developers`, `#wallet-connect-hero-panel` | `--gradient-hero` |
-| 6 | Live Network Metrics Strip | `/communities`, `#impact-metrics` | `--gradient-ledger` |
-| 7 | Wallet Connect Hero Panel | `▲` Freighter, `#three-pillar-value-proposition` | `--gradient-token` + `--gradient-aurora` |
-| 8 | Built-on-Stellar Trust Bar | `▲` Stellar, Horizon, Soroban, Freighter, npm | `--gradient-seam` |
-| 9 | Three-Pillar Value Proposition | `#community-token-issuance`, `#p2p-micro-lending-pools`, `#dao-governance-soroban` | `--gradient-token` / `treasury` / `governance` |
-| 10 | The Financial Exclusion Problem | `/about`, `#how-cooplumen-works` | `--gradient-aurora` |
-| 11 | How CoopLumen Works | `/developers`, `#trustline-onboarding`, `/` | `--gradient-mesh` |
-| 12 | Why Stellar | `▲ developers.stellar.org`, `#fee-remittance-calculator` | `--gradient-surface` |
-| 13 | Comparison Matrix | `/about`, `/`, `/faq` | `--gradient-aurora` |
-| 14 | Architecture Transparency | `/developers#openapi`, `/security` | `--gradient-mesh` |
-| 15 | Community Token Issuance | `/`, `/developers#tokens` | `--gradient-token` |
-| 16 | Trustline Onboarding | `/`, `/developers#trustlines` | `--gradient-token` |
-| 17 | Shared Multi-Signature Treasury | `/developers#communities`, `#public-roadmap-timeline` | `--gradient-treasury` |
-| 18 | Batch Disbursement & Airdrop | `/developers#tokens`, `#fee-remittance-calculator` | `--gradient-treasury` |
-| 19 | P2P Micro-Lending Pools | `/`, `/developers#loans` | `--gradient-surface` |
-| 20 | Reputation & Credit Signals | `/`, `/developers#reputation` | `--gradient-token` |
-| 21 | DAO Governance & Soroban Proposals | `/about`, `#public-roadmap-timeline` | `--gradient-governance` |
-| 22 | Identity, KYC & Price Oracles | `/developers#prices`, `/contact` | `--gradient-surface` + `--gradient-trust` |
-| 23 | Transaction Lifecycle Visualizer | `/`, `/developers#transactions` | `--gradient-ledger` + `--gradient-cta` |
-| 24 | Live On-Chain Activity Feed | `/`, `/communities` | `--gradient-surface` + `--gradient-ledger` |
-| 25 | Community Discovery Explorer | `/communities`, `/communities/{id}` | `--gradient-surface` |
-| 26 | Asset & Trustline Explorer | `/developers#balances`, `▲` Stellar Expert | `--gradient-token` |
-| 27 | Fee & Remittance Savings Calculator | `/developers#fees`, `#comparison-matrix` | `--gradient-cta` |
-| 28 | Network Health & XLM/USD Ticker | `/developers#prices`, `/status` | `--gradient-surface` |
-| 29 | Built for These Communities | `#community-token-issuance`, `/developers`, `#dao-governance-soroban` | `--gradient-surface` |
-| 30 | Community Stories & Case Studies | `/blog`, `/`, `/contact` | `--gradient-aurora` |
-| 31 | Public Roadmap Timeline | `▲` GitHub, `/about`, `#contribution-bounty-spotlight` | `--gradient-aurora` |
-| 32 | Impact Metrics & Success Targets | `#live-network-metrics-strip`, `/about` | `--gradient-surface` |
-| 33 | Security, Transparency & Open Source | `/security`, `▲` repo, `mailto:security@cooplumen.org` | `--gradient-trust` |
-| 34 | Pricing & Community Plans | `/`, `/developers#self-hosting`, `/contact` | `--gradient-cta` |
-| 35 | Community & Support Hub | `▲` Discussions, `▲ discord.gg/stellar`, `/contact` | `--gradient-treasury` |
-| 36 | Contribution & Bounty Spotlight | `▲` issues, `▲` Open Collective, `/about#contributors` | `--gradient-mesh` |
-| 37 | Newsletter & Testnet Waitlist | `#blog-changelog-preview`, `/privacy` | `--gradient-cta` |
-| 38 | Blog, Changelog & Release Notes Preview | `/changelog`, `/blog`, `▲` repo | `--gradient-aurora` |
-| 39 | Final CTA Band | `/`, `/contact`, `/developers` | `--gradient-hero` |
-| 40 | Contact Us | `/contact`, `mailto:security@cooplumen.org` | `--gradient-token` + `--gradient-cta` |
+| #   | Section                                 | Anchors to / links to route                                                        | Gradient                                       |
+| --- | --------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------- |
+| 1   | Header Navigation Bar                   | `/`, `/communities`, `/developers`, `#pricing-community-plans`                     | `--gradient-seam`                              |
+| 2   | Mobile Navigation Drawer                | header destinations, `#wallet-connect-hero-panel`                                  | overlay + surface-raised                       |
+| 3   | Network Status Bar                      | `▲` Stellar Expert, `#fee-remittance-calculator`                                   | `--gradient-ledger`                            |
+| 4   | Site Footer                             | every anchor and reserved route                                                    | `--gradient-seam`                              |
+| 5   | Hero Section                            | `/`, `/developers`, `#wallet-connect-hero-panel`                                   | `--gradient-hero`                              |
+| 6   | Live Network Metrics Strip              | `/communities`, `#impact-metrics`                                                  | `--gradient-ledger`                            |
+| 7   | Wallet Connect Hero Panel               | `▲` Freighter, `#three-pillar-value-proposition`                                   | `--gradient-token` + `--gradient-aurora`       |
+| 8   | Built-on-Stellar Trust Bar              | `▲` Stellar, Horizon, Soroban, Freighter, npm                                      | `--gradient-seam`                              |
+| 9   | Three-Pillar Value Proposition          | `#community-token-issuance`, `#p2p-micro-lending-pools`, `#dao-governance-soroban` | `--gradient-token` / `treasury` / `governance` |
+| 10  | The Financial Exclusion Problem         | `/about`, `#how-cooplumen-works`                                                   | `--gradient-aurora`                            |
+| 11  | How CoopLumen Works                     | `/developers`, `#trustline-onboarding`, `/`                                        | `--gradient-mesh`                              |
+| 12  | Why Stellar                             | `▲ developers.stellar.org`, `#fee-remittance-calculator`                           | `--gradient-surface`                           |
+| 13  | Comparison Matrix                       | `/about`, `/`, `/faq`                                                              | `--gradient-aurora`                            |
+| 14  | Architecture Transparency               | `/developers#openapi`, `/security`                                                 | `--gradient-mesh`                              |
+| 15  | Community Token Issuance                | `/`, `/developers#tokens`                                                          | `--gradient-token`                             |
+| 16  | Trustline Onboarding                    | `/`, `/developers#trustlines`                                                      | `--gradient-token`                             |
+| 17  | Shared Multi-Signature Treasury         | `/developers#communities`, `#public-roadmap-timeline`                              | `--gradient-treasury`                          |
+| 18  | Batch Disbursement & Airdrop            | `/developers#tokens`, `#fee-remittance-calculator`                                 | `--gradient-treasury`                          |
+| 19  | P2P Micro-Lending Pools                 | `/`, `/developers#loans`                                                           | `--gradient-surface`                           |
+| 20  | Reputation & Credit Signals             | `/`, `/developers#reputation`                                                      | `--gradient-token`                             |
+| 21  | DAO Governance & Soroban Proposals      | `/about`, `#public-roadmap-timeline`                                               | `--gradient-governance`                        |
+| 22  | Identity, KYC & Price Oracles           | `/developers#prices`, `/contact`                                                   | `--gradient-surface` + `--gradient-trust`      |
+| 23  | Transaction Lifecycle Visualizer        | `/`, `/developers#transactions`                                                    | `--gradient-ledger` + `--gradient-cta`         |
+| 24  | Live On-Chain Activity Feed             | `/`, `/communities`                                                                | `--gradient-surface` + `--gradient-ledger`     |
+| 25  | Community Discovery Explorer            | `/communities`, `/communities/{id}`                                                | `--gradient-surface`                           |
+| 26  | Asset & Trustline Explorer              | `/developers#balances`, `▲` Stellar Expert                                         | `--gradient-token`                             |
+| 27  | Fee & Remittance Savings Calculator     | `/developers#fees`, `#comparison-matrix`                                           | `--gradient-cta`                               |
+| 28  | Network Health & XLM/USD Ticker         | `/developers#prices`, `/status`                                                    | `--gradient-surface`                           |
+| 29  | Built for These Communities             | `#community-token-issuance`, `/developers`, `#dao-governance-soroban`              | `--gradient-surface`                           |
+| 30  | Community Stories & Case Studies        | `/blog`, `/`, `/contact`                                                           | `--gradient-aurora`                            |
+| 31  | Public Roadmap Timeline                 | `▲` GitHub, `/about`, `#contribution-bounty-spotlight`                             | `--gradient-aurora`                            |
+| 32  | Impact Metrics & Success Targets        | `#live-network-metrics-strip`, `/about`                                            | `--gradient-surface`                           |
+| 33  | Security, Transparency & Open Source    | `/security`, `▲` repo, `mailto:security@cooplumen.org`                             | `--gradient-trust`                             |
+| 34  | Pricing & Community Plans               | `/`, `/developers#self-hosting`, `/contact`                                        | `--gradient-cta`                               |
+| 35  | Community & Support Hub                 | `▲` Discussions, `▲ discord.gg/stellar`, `/contact`                                | `--gradient-treasury`                          |
+| 36  | Contribution & Bounty Spotlight         | `▲` issues, `▲` Open Collective, `/about#contributors`                             | `--gradient-mesh`                              |
+| 37  | Newsletter & Testnet Waitlist           | `#blog-changelog-preview`, `/privacy`                                              | `--gradient-cta`                               |
+| 38  | Blog, Changelog & Release Notes Preview | `/changelog`, `/blog`, `▲` repo                                                    | `--gradient-aurora`                            |
+| 39  | Final CTA Band                          | `/`, `/contact`, `/developers`                                                     | `--gradient-hero`                              |
+| 40  | Contact Us                              | `/contact`, `mailto:security@cooplumen.org`                                        | `--gradient-token` + `--gradient-cta`          |
 
 ---
 
@@ -1083,15 +1085,15 @@ These are the standalone routes the landing page links into. They are **not** co
 
 ### Pages summary
 
-| # | Page | Route | Exists today | Links in from sections |
-| --- | --- | --- | --- | --- |
-| P1 | Discover Communities | `/communities` | yes | 1, 6, 24, 25, 35 |
-| P2 | Community Detail | `/communities/[id]` | no | P1 cards, 25 |
-| P3 | Dashboard / App | `/` | yes | 1, 5, 11, 13, 15, 16, 19, 20, 23, 24, 30, 34, 39 |
-| P4 | Developers & API Reference | `/developers` | no | 1, 5, 11, 14, 31, 34, 36, 39 |
-| P5 | About | `/about` | no | 4, 10, 13, 21, 30, 31, 32, 36 |
-| P6 | FAQ | `/faq` | no | 4, 13 |
-| P7 | Contact | `/contact` | no | 4, 22, 30, 34, 39, 40 |
+| #   | Page                       | Route               | Exists today | Links in from sections                           |
+| --- | -------------------------- | ------------------- | ------------ | ------------------------------------------------ |
+| P1  | Discover Communities       | `/communities`      | yes          | 1, 6, 24, 25, 35                                 |
+| P2  | Community Detail           | `/communities/[id]` | no           | P1 cards, 25                                     |
+| P3  | Dashboard / App            | `/`                 | yes          | 1, 5, 11, 13, 15, 16, 19, 20, 23, 24, 30, 34, 39 |
+| P4  | Developers & API Reference | `/developers`       | no           | 1, 5, 11, 14, 31, 34, 36, 39                     |
+| P5  | About                      | `/about`            | no           | 4, 10, 13, 21, 30, 31, 32, 36                    |
+| P6  | FAQ                        | `/faq`              | no           | 4, 13                                            |
+| P7  | Contact                    | `/contact`          | no           | 4, 22, 30, 34, 39, 40                            |
 
 ---
 
@@ -1101,48 +1103,48 @@ These are the standalone routes the landing page links into. They are **not** co
 
 The landing page should be assembled almost entirely from primitives that already exist, so it looks and behaves like the product rather than a separate marketing skin.
 
-| Section(s) | Reuse from `frontend/src/components` |
-| --- | --- |
-| 1, 2 | `ThemeToggle`, `WalletConnect`, `NetworkBadge`, `Button`, `Modal` (drawer), `Alert` |
-| 3 | `NetworkBadge`, `Spinner`, `Tooltip` |
-| 4 | `Badge`, `NetworkBadge`, `ThemeToggle` |
-| 5, 7 | `WalletConnect`, `BalancePanel`, `QRCode`, `StellarAddress`, `CopyToClipboard`, `Button`, `Alert`, `NetworkWarning` |
-| 6, 32 | `Card`, `ProgressBar`, `LoadingSkeleton`, `Table` |
-| 8, 14 | `Card`, `Badge`, `Tooltip` |
-| 9, 29 | `Card`, `Badge`, `Tooltip` |
-| 10, 13 | `Table`, `Alert`, `Badge` |
-| 11, 23 | `Card`, `ProgressBar`, `Alert`, `Spinner`, `CopyToClipboard` |
+| Section(s)     | Reuse from `frontend/src/components`                                                                                                  |
+| -------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| 1, 2           | `ThemeToggle`, `WalletConnect`, `NetworkBadge`, `Button`, `Modal` (drawer), `Alert`                                                   |
+| 3              | `NetworkBadge`, `Spinner`, `Tooltip`                                                                                                  |
+| 4              | `Badge`, `NetworkBadge`, `ThemeToggle`                                                                                                |
+| 5, 7           | `WalletConnect`, `BalancePanel`, `QRCode`, `StellarAddress`, `CopyToClipboard`, `Button`, `Alert`, `NetworkWarning`                   |
+| 6, 32          | `Card`, `ProgressBar`, `LoadingSkeleton`, `Table`                                                                                     |
+| 8, 14          | `Card`, `Badge`, `Tooltip`                                                                                                            |
+| 9, 29          | `Card`, `Badge`, `Tooltip`                                                                                                            |
+| 10, 13         | `Table`, `Alert`, `Badge`                                                                                                             |
+| 11, 23         | `Card`, `ProgressBar`, `Alert`, `Spinner`, `CopyToClipboard`                                                                          |
 | 15, 16, 17, 18 | `Form`, `Input`, `AmountInput`, `Select`, `Checkbox`, `StellarAddress`, `CopyToClipboard`, `Table`, `Modal`, `ConfirmDialog`, `Badge` |
-| 19, 20 | `LoanCard`, `LoanHistory`, `LoanActions`, `ReputationPanel`, `MyReputationPanel`, `ProgressBar`, `Pagination` |
-| 21 | `Card`, `ProgressBar`, `Badge`, `Table` |
-| 22, 28 | `Card`, `Badge`, `Alert`, `Tooltip` |
-| 24 | `Table`, `Badge`, `EmptyState`, `LoadingSkeleton`, `StellarAddress` |
-| 25 | `CommunityCard`, `CommunityList`, `Pagination`, `EmptyState`, `LoadingSkeleton`, `Select` |
-| 26 | `Table`, `Input`, `StellarAddress`, `CopyToClipboard`, `EmptyState`, `Alert` |
-| 27 | `AmountInput`, `Select`, `Card`, `Alert` |
-| 30 | `Card`, `Avatar`, `Badge`, `Tooltip` |
-| 31, 36 | `Badge`, `Card`, `ProgressBar`, `Avatar` |
-| 33 | `Card`, `Table`, `Alert`, `CopyToClipboard`, `Badge` |
-| 34 | `Card`, `Table`, `Badge`, `Alert`, `Button` |
-| 35, 40 | `Card`, `Form`, `Input`, `Textarea`, `Select`, `Alert`, `CopyToClipboard`, `Button` |
-| 37, 38 | `Form`, `Input`, `Button`, `Alert`, `Card`, `Badge` |
-| 39 | `Button`, `NetworkBadge`, `Alert` |
-| All | `ErrorBoundary`, `ToastProvider` / `useToast`, `ThemeProvider`, `useBreakpoint` |
+| 19, 20         | `LoanCard`, `LoanHistory`, `LoanActions`, `ReputationPanel`, `MyReputationPanel`, `ProgressBar`, `Pagination`                         |
+| 21             | `Card`, `ProgressBar`, `Badge`, `Table`                                                                                               |
+| 22, 28         | `Card`, `Badge`, `Alert`, `Tooltip`                                                                                                   |
+| 24             | `Table`, `Badge`, `EmptyState`, `LoadingSkeleton`, `StellarAddress`                                                                   |
+| 25             | `CommunityCard`, `CommunityList`, `Pagination`, `EmptyState`, `LoadingSkeleton`, `Select`                                             |
+| 26             | `Table`, `Input`, `StellarAddress`, `CopyToClipboard`, `EmptyState`, `Alert`                                                          |
+| 27             | `AmountInput`, `Select`, `Card`, `Alert`                                                                                              |
+| 30             | `Card`, `Avatar`, `Badge`, `Tooltip`                                                                                                  |
+| 31, 36         | `Badge`, `Card`, `ProgressBar`, `Avatar`                                                                                              |
+| 33             | `Card`, `Table`, `Alert`, `CopyToClipboard`, `Badge`                                                                                  |
+| 34             | `Card`, `Table`, `Badge`, `Alert`, `Button`                                                                                           |
+| 35, 40         | `Card`, `Form`, `Input`, `Textarea`, `Select`, `Alert`, `CopyToClipboard`, `Button`                                                   |
+| 37, 38         | `Form`, `Input`, `Button`, `Alert`, `Card`, `Badge`                                                                                   |
+| 39             | `Button`, `NetworkBadge`, `Alert`                                                                                                     |
+| All            | `ErrorBoundary`, `ToastProvider` / `useToast`, `ThemeProvider`, `useBreakpoint`                                                       |
 
 ### Appendix B — Reserved routes beyond the 40
 
 These routes are referenced by the footer, the CTA banners and the reserved-route links, but they are **not** counted in the 40 sections or the 7 pages. Each is a small, mostly-static page that can reuse the global chrome and the token system.
 
-| Route | Purpose | Referenced from |
-| --- | --- | --- |
-| `/pricing` | Long-form version of section 34 with an expanded comparison table | 1, 4, 34 |
-| `/changelog` | Full release history, rendered from `CHANGELOG.md` | 4, 38 |
-| `/blog` | Case studies, engineering notes, announcements | 4, 30, 38 |
-| `/status` | Live network + API status, ledger close history, incident log | 4, 28 |
-| `/security` | The long-form version of section 33, mirroring `SECURITY.md` | 4, 14, 33 |
-| `/privacy` | Data handling: emails, public keys, no secret-key collection | 4, 37 |
-| `/terms` | Terms of use and the testnet / no-real-funds disclaimer | 4, 34 |
-| `/contributors` | Standalone `CONTRIBUTORS.md` view, linked as `/about#contributors` too | 4, 36 |
+| Route           | Purpose                                                                | Referenced from |
+| --------------- | ---------------------------------------------------------------------- | --------------- |
+| `/pricing`      | Long-form version of section 34 with an expanded comparison table      | 1, 4, 34        |
+| `/changelog`    | Full release history, rendered from `CHANGELOG.md`                     | 4, 38           |
+| `/blog`         | Case studies, engineering notes, announcements                         | 4, 30, 38       |
+| `/status`       | Live network + API status, ledger close history, incident log          | 4, 28           |
+| `/security`     | The long-form version of section 33, mirroring `SECURITY.md`           | 4, 14, 33       |
+| `/privacy`      | Data handling: emails, public keys, no secret-key collection           | 4, 37           |
+| `/terms`        | Terms of use and the testnet / no-real-funds disclaimer                | 4, 34           |
+| `/contributors` | Standalone `CONTRIBUTORS.md` view, linked as `/about#contributors` too | 4, 36           |
 
 ### Appendix C — External platform inventory
 
@@ -1150,48 +1152,48 @@ Every outbound link the landing page needs, grouped by destination type.
 
 **Stellar infrastructure**
 
-| Destination | URL | Used by sections |
-| --- | --- | --- |
-| Stellar home | `https://stellar.org` | 8, 12, 14 |
-| Stellar developer docs | `https://developers.stellar.org` | 2, 8, 12, 22, 36 |
-| Horizon (testnet) | `https://horizon-testnet.stellar.org` | 3, 14, 26, 28 |
-| Horizon (mainnet) | `https://horizon.stellar.org` | 3, 28 |
-| Stellar Expert — testnet | `https://stellar.expert/explorer/testnet` | 3, 15, 18, 23, 24, 26 |
-| Stellar Expert — mainnet | `https://stellar.expert/explorer/public` | 3, 26 |
-| Soroban documentation | `https://developers.stellar.org/docs/smart-contracts` | 8, 12, 21 |
-| SEP-12 (KYC) standard | `https://stellar.org/protocol/sep-12` | 22 |
-| Stellar Developers Discord | `https://discord.gg/stellar` | 35, 40 |
+| Destination                | URL                                                   | Used by sections      |
+| -------------------------- | ----------------------------------------------------- | --------------------- |
+| Stellar home               | `https://stellar.org`                                 | 8, 12, 14             |
+| Stellar developer docs     | `https://developers.stellar.org`                      | 2, 8, 12, 22, 36      |
+| Horizon (testnet)          | `https://horizon-testnet.stellar.org`                 | 3, 14, 26, 28         |
+| Horizon (mainnet)          | `https://horizon.stellar.org`                         | 3, 28                 |
+| Stellar Expert — testnet   | `https://stellar.expert/explorer/testnet`             | 3, 15, 18, 23, 24, 26 |
+| Stellar Expert — mainnet   | `https://stellar.expert/explorer/public`              | 3, 26                 |
+| Soroban documentation      | `https://developers.stellar.org/docs/smart-contracts` | 8, 12, 21             |
+| SEP-12 (KYC) standard      | `https://stellar.org/protocol/sep-12`                 | 22                    |
+| Stellar Developers Discord | `https://discord.gg/stellar`                          | 35, 40                |
 
 **Wallet, SDK and funding**
 
-| Destination | URL | Used by sections |
-| --- | --- | --- |
-| Freighter | `https://freighter.app` | 2, 7, 12, 35 |
-| `@stellar/stellar-sdk` on npm | `https://www.npmjs.com/package/@stellar/stellar-sdk` | 8, 14, 37 |
-| Open Collective | `https://opencollective.com/cooplumen` | 4, 36 |
-| GitHub Sponsors | via `.github/FUNDING.yml` | 36 |
+| Destination                   | URL                                                  | Used by sections |
+| ----------------------------- | ---------------------------------------------------- | ---------------- |
+| Freighter                     | `https://freighter.app`                              | 2, 7, 12, 35     |
+| `@stellar/stellar-sdk` on npm | `https://www.npmjs.com/package/@stellar/stellar-sdk` | 8, 14, 37        |
+| Open Collective               | `https://opencollective.com/cooplumen`               | 4, 36            |
+| GitHub Sponsors               | via `.github/FUNDING.yml`                            | 36               |
 
 **Project**
 
-| Destination | URL | Used by sections |
-| --- | --- | --- |
-| Repository | `https://github.com/Tybravo/CoopLumen-Index` | 2, 4, 31, 36, 38 |
-| Issues (good first issues) | repo `/issues` | 31, 36 |
-| Discussions | repo `/discussions` | 4, 35, 40 |
-| Bug report template | repo `.github/ISSUE_TEMPLATE/bug_report.yml` | 35 |
-| Feature request template | repo `.github/ISSUE_TEMPLATE/feature_request.yml` | 35 |
-| `CONTRIBUTING.md` | repo root | 36 |
-| `SECURITY.md` | repo root | 33 |
-| `CONTRIBUTORS.md` | repo root | 36 |
-| Security email | `security@cooplumen.org` | 33, 40 |
+| Destination                | URL                                               | Used by sections |
+| -------------------------- | ------------------------------------------------- | ---------------- |
+| Repository                 | `https://github.com/Tybravo/CoopLumen-Index`      | 2, 4, 31, 36, 38 |
+| Issues (good first issues) | repo `/issues`                                    | 31, 36           |
+| Discussions                | repo `/discussions`                               | 4, 35, 40        |
+| Bug report template        | repo `.github/ISSUE_TEMPLATE/bug_report.yml`      | 35               |
+| Feature request template   | repo `.github/ISSUE_TEMPLATE/feature_request.yml` | 35               |
+| `CONTRIBUTING.md`          | repo root                                         | 36               |
+| `SECURITY.md`              | repo root                                         | 33               |
+| `CONTRIBUTORS.md`          | repo root                                         | 36               |
+| Security email             | `security@cooplumen.org`                          | 33, 40           |
 
 **Third-party references**
 
-| Destination | Purpose | Used by sections |
-| --- | --- | --- |
-| World Bank (2022) unbanked figure | Citation for 1.4 billion unbanked adults | 10 |
-| Proof of Humanity / World ID | Optional governance identity gate | 22 |
-| Docker / Docker Compose docs | Self-hosting instructions | 34, P4 |
+| Destination                       | Purpose                                  | Used by sections |
+| --------------------------------- | ---------------------------------------- | ---------------- |
+| World Bank (2022) unbanked figure | Citation for 1.4 billion unbanked adults | 10               |
+| Proof of Humanity / World ID      | Optional governance identity gate        | 22               |
+| Docker / Docker Compose docs      | Self-hosting instructions                | 34, P4           |
 
 ---
 
@@ -1202,4 +1204,3 @@ Every outbound link the landing page needs, grouped by destination type.
 **What this document is not:** a landing page. No components, pages, or stylesheets were created. The only CSS shown is the proposed `--gradient-*` token block in [4.3](#43-gradient-tokens), included so the colour direction can be reviewed precisely.
 
 **Before implementation:** confirm the 40-section list, approve the `--gradient-*` token names and values in 4.3, and decide whether the dark-theme teal rule in 4.5 is accepted as written.
-
